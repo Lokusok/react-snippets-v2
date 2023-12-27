@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+}
+
+.input {
+  appearance: none;
+  border: none;
+  background: var(--color-dark);
+  border-radius: 6px 0 0 6px;
+  font-size: 18px;
+  padding: 11px;
+  color: #fff;
+  min-width: 295px;
+
+  &::placeholder {
+    color: #fff;
+  }
+
+  &::selection {
+    background: orange;
+  }
+}
+
+.button {
+  appearance: none;
+  border: none;
+  background: #001d6b;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  color: #fff;
+  padding: 0 12px;
+  transition: background ease .2s, opacity ease .1s;
+
+  &:hover {
+    background: #6f7be7;
+  }
+
+  &:active {
+    opacity: .3;
+  }
+}

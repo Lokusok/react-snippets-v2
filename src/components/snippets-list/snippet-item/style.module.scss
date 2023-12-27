@@ -1,0 +1,20 @@
+.root {
+  appearance: none;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  display: block;
+  background: var(--color-accent);
+  padding: 14px 10px;
+  text-align: center;
+  border-radius: 6px;
+  transition: opacity ease .2s;
+
+  &:hover {
+    opacity: .8;
+  }
+
+  &:active {
+    opacity: .5;
+  }
+}

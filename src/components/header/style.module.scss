@@ -1,0 +1,15 @@
+.header {
+  background: var(--color-light);
+  padding-top: 28px;
+  padding-bottom: 24px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 29px;
+}

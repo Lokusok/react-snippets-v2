@@ -1,0 +1,36 @@
+{
+  "articles": [
+    {
+      "id": "1",
+      "title": "JavaScript-сниппеты",
+      "snippets": [
+        {
+          "id": "1",
+          "title": "Ajax-запрос",
+          "code": "fetch('...')"
+        },
+        {
+          "id": "2",
+          "title": "Вечный цикл",
+          "code": "while (true) {...}"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Python",
+      "snippets": [
+        {
+          "id": "1",
+          "title": "Миграция БД",
+          "code": "migration of db"
+        },
+        {
+          "id": "2",
+          "title": "Обработка POST-запроса",
+          "code": "...@app.post..."
+        }
+      ]
+    }
+  ]
+}

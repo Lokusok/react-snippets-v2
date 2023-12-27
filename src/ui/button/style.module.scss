@@ -1,0 +1,17 @@
+.button {
+  appearance: none;
+  border: none;
+  background: var(--color-accent-2);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px 35px;
+  transition: opacity ease .3s;
+
+  &:hover {
+    opacity: .75;
+  }
+
+  &:active {
+    opacity: .4;
+  }
+}

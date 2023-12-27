@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'JejuGothic';
+  font-weight: 400;
+  font-display: swap;
+  src: url('./assets/fonts/JejuGothic-Regular.ttf') format('truetype');
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'JejuGothic', Arial, sans-serif;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

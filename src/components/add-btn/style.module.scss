@@ -1,0 +1,26 @@
+.button {
+  appearance: none;
+  border: none;
+  background: var(--color-accent-2);
+  cursor: pointer;
+  border-radius: 6px;
+  width: 35px;
+  height: 35px;
+  transition: opacity ease .2s;
+
+  &:hover {
+    opacity: .75;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+.short {
+  min-width: auto;
+}
+
+.long {
+  min-width: 150px;
+}

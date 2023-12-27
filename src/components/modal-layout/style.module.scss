@@ -1,0 +1,43 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(#000, .6);
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.content {
+  background: #fff;
+  border-radius: 6px;
+  padding: 33px;
+  position: relative;
+  width: 70%;
+  max-width: 920px;
+}
+
+.title {
+  font-size: 32px;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.children {
+  padding-top: 90px;
+}

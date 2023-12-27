@@ -1,0 +1,18 @@
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 80px;
+  grid-row-gap: 40px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.bottom {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+}

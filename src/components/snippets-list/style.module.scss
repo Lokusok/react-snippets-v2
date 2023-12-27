@@ -1,0 +1,17 @@
+.root {
+  background: var(--color-sublight);
+  padding: 10px 12px;
+  border-radius: 6px;
+  flex-grow: 1;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 13px;
+}
+
+.listItem {
+  display: flex;
+  justify-content: center;
+}
