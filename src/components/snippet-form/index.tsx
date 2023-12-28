@@ -1,3 +1,5 @@
+import { useForm, SubmitHandler } from 'react-hook-form';
+
 import style from './style.module.scss';
 
 import Field from '../field';
@@ -5,18 +7,25 @@ import Field from '../field';
 import Input from '../../ui/input';
 import Button from '../../ui/button';
 
-function SnippetForm() {
-  const callbacks = {
-    submit: (e: React.FormEvent) => {
-      e.preventDefault();
-    },
+type TInputs = {
+  title: string;
+};
+
+type Props = {
+  onSubmit: (data: TInputs) => void;
+};
+
+function SnippetForm({ onSubmit }: Props) {
+  const { register, handleSubmit } = useForm<TInputs>();
+  const handleForm: SubmitHandler<TInputs> = (data) => {
+    onSubmit(data);
   };
 
   return (
-    <form onClick={callbacks.submit} className={style.form}>
+    <form onSubmit={handleSubmit(handleForm)} className={style.form}>
       <Field>
         <label htmlFor="descr">Название:</label>
-        <Input placeholder="Введите название" />
+        <Input {...register('title')} placeholder="Введите название" />
       </Field>
 
       <Field>

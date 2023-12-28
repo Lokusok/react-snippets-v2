@@ -8,11 +8,11 @@ import Field from './field';
 import SnippetsList from '../snippets-list';
 import DeleteGroup from './delete-group';
 
-import { TGroup, TSnippet } from '../../models';
+import { TGroup } from '../../models';
 
 type Props = {
   group: TGroup;
-  onNewSnippet: () => void;
+  onNewSnippet: (group: TGroup) => void;
   onSnippetClick: () => void;
   onGroupDelete: (id: string) => void;
 };
@@ -21,6 +21,9 @@ function Group(props: Props) {
   const callbacks = {
     deleteGroup: () => {
       props.onGroupDelete(props.group.id);
+    },
+    onNewSnippet: () => {
+      props.onNewSnippet(props.group);
     },
   };
 
@@ -39,7 +42,7 @@ function Group(props: Props) {
         </div>
 
         <SnippetsList
-          onNewSnippet={props.onNewSnippet}
+          onNewSnippet={callbacks.onNewSnippet}
           snippets={props.group.snippets}
           onSnippetClick={props.onSnippetClick}
         />

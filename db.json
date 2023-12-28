@@ -46,31 +46,18 @@
           "id": "2",
           "title": "Обработка POST-запроса",
           "code": "...@app.post..."
-        }
-      ]
-    },
-    {
-      "id": "3",
-      "title": "Python",
-      "description": "Куски кода, связанные с авторизацией пользователей в системе",
-      "snippets": [
-        {
-          "id": "1",
-          "title": "Миграция БД",
-          "code": "migration of db"
         },
         {
-          "id": "2",
-          "title": "Обработка POST-запроса",
-          "code": "...@app.post..."
+          "id": "1703791958210",
+          "title": "dfgdfg",
+          "code": "print(\"hello world\")"
+        },
+        {
+          "id": "1703793227233",
+          "title": "fdgdfg",
+          "code": "print(\"hello world\")"
         }
       ]
-    },
-    {
-      "title": "kkk",
-      "description": "vbnvbn",
-      "snippets": [],
-      "id": "WEVrBt6"
     }
   ]
 }

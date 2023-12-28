@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { TGroup } from '../../models';
+import { TGroup, TSnippet } from '../../models';
 
 import { TGroupMutation, TGroupsQuery } from './types';
 
@@ -8,8 +8,8 @@ const groupsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/' }),
   tagTypes: ['Groups'],
   endpoints: (builder) => ({
-    getGroups: builder.query<TGroup[], string | undefined>({
-      query: (search) => `groups?q=${search}`,
+    getGroups: builder.query<TGroup[], TGroupsQuery>({
+      query: ({ query }) => `groups?q=${query}`,
       providesTags: ['Groups'],
     }),
     addGroup: builder.mutation<void, TGroupMutation>({
@@ -27,12 +27,21 @@ const groupsApi = createApi({
       }),
       invalidatesTags: ['Groups'],
     }),
+    updateSnippets: builder.mutation<void, TGroup>({
+      query: (group) => ({
+        url: `groups/${group.id}`,
+        method: 'PUT',
+        body: group,
+      }),
+      invalidatesTags: ['Groups'],
+    }),
   }),
 });
 
 export const {
   useLazyGetGroupsQuery,
   useAddGroupMutation,
-  useDeleteGroupMutation } = groupsApi;
+  useDeleteGroupMutation,
+  useUpdateSnippetsMutation } = groupsApi;
 
 export default groupsApi;

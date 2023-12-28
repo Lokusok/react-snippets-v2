@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { TModalsState } from './types';
 
 const initialState: TModalsState = {
@@ -9,7 +9,7 @@ const modalsSlice = createSlice({
   name: 'modals',
   initialState,
   reducers: {
-    setActiveModal(state, action) {
+    setActiveModal(state, action: PayloadAction<string | null>) {
       state.active = action.payload;
     }
   },

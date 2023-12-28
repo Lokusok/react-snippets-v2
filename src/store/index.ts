@@ -3,6 +3,7 @@ import { setupListeners } from '@reduxjs/toolkit/query';
 
 import modalsReducer from './slices/modals';
 import searchReducer from './slices/search';
+import groupsReducer from './slices/groups';
 
 import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
 
@@ -12,6 +13,7 @@ const store = configureStore({
   reducer: {
     modals: modalsReducer,
     search: searchReducer,
+    groups: groupsReducer,
     [groupsApi.reducerPath]: groupsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

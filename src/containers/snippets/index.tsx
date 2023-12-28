@@ -3,9 +3,12 @@ import { useEffect } from 'react';
 import GroupsGrid from "../../components/groups-grid";
 
 import { useAppDispatch, useAppSelector } from "../../store";
-
 import { setActiveModal } from "../../store/slices/modals";
+import { setActiveGroup } from '../../store/slices/groups';
+
 import { useDeleteGroupMutation, useLazyGetGroupsQuery } from "../../api/groups";
+
+import { TGroup } from '../../models';
 
 function Snippets() {
   const dispatch = useAppDispatch();
@@ -13,7 +16,10 @@ function Snippets() {
 
   const callbacks = {
     onNewGroup: () => dispatch(setActiveModal('group-create')),
-    onNewSnippet: () => dispatch(setActiveModal('snippet-create')),
+    onNewSnippet: (group: TGroup) => {
+      dispatch(setActiveModal('snippet-create'));
+      dispatch(setActiveGroup(group));
+    },
     onSnippetClick: () => dispatch(setActiveModal('snippet-view')),
     onGroupDelete: (id: string) => deleteGroup(id),
   };
@@ -22,7 +28,7 @@ function Snippets() {
   const [deleteGroup] = useDeleteGroupMutation();
 
   useEffect(() => {
-    getGroups(searchQuery);
+    getGroups({ query: searchQuery });
   }, [getGroups, searchQuery]);
 
   if (!groups) {

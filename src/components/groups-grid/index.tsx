@@ -8,7 +8,7 @@ import { TGroup } from '../../models';
 type Props = {
   groups: TGroup[];
   onNewGroup: () => void;
-  onNewSnippet: () => void;
+  onNewSnippet: (group: TGroup) => void;
   onSnippetClick: () => void;
   onGroupDelete: (id: string) => void;
 };

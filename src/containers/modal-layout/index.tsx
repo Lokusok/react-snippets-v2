@@ -1,9 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import style from './style.module.scss';
 
 import { useAppDispatch } from '../../store';
 import { setActiveModal } from '../../store/slices/modals';
+
+import useOnClickOutside from '../../hooks/use-on-click-outside';
 
 import CloseBtn from './close-btn';
 
@@ -14,6 +16,7 @@ type Props = {
 
 function ModalLayout({ title, children }: Props) {
   const dispatch = useAppDispatch();
+  const modalRef = useRef<HTMLDivElement>(null);
 
   const callbacks = {
     onClose: () => dispatch(setActiveModal(null)),
@@ -27,10 +30,12 @@ function ModalLayout({ title, children }: Props) {
     };
   }, []);
 
+  useOnClickOutside(modalRef, callbacks.onClose);
+
   return (
     <div className={style.modal}>
       <div className={style.inner}>
-        <div className={style.content}>
+        <div ref={modalRef} className={style.content}>
           <h1 className={style.title}>
             {title}
           </h1>

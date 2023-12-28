@@ -6,7 +6,7 @@ const initialState: TSearchState = {
 };
 
 const searchSlice = createSlice({
-  name: 'modals',
+  name: 'search',
   initialState,
   reducers: {
     setQuery: (state, action: PayloadAction<string>) => {
