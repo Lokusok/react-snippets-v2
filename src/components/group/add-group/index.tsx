@@ -5,10 +5,18 @@ import AddBtn from "../../add-btn";
 
 import cn from 'classnames';
 
-function AddGroup() {
+type Props = {
+  onClick: () => void;
+};
+
+function AddGroup({ onClick }: Props) {
   return (
-    <div className={cn(styleGroup.root, style.root)}>
-      <AddBtn variant="long" />
+    <div>
+      <div className={styleGroup.root}>
+        <div className={cn(styleGroup.wrapper, style.root)}>
+          <AddBtn onClick={onClick} variant="long" />
+        </div>
+      </div>
     </div>
   );
 }

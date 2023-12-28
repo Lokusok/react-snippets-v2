@@ -1,0 +1,25 @@
+.delete {
+  position: absolute;
+  right: -12px;
+  top: 15px;
+  z-index: 0;
+  transition: transform ease .3s;
+
+  &:hover {
+    transform: translateX(20px);
+  }
+}
+
+.button {
+  appearance: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #c41d1d;
+
+  transition: background ease .1s;
+
+  &:active {
+    background: #eb3f3f;
+  }
+}

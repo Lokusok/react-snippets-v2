@@ -1,0 +1,15 @@
+.logo {
+  font-size: 29px;
+  color: #000;
+  text-decoration: none;
+  transition: opacity ease .2s;
+
+  &:hover {
+    opacity: .6;
+  }
+
+  &:active {
+    opacity: .2;
+    transition: opacity ease .1s;
+  }
+}

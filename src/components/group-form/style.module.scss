@@ -5,14 +5,12 @@
   grid-row-gap: 40px;
 }
 
-.field {
-  display: flex;
-  flex-direction: column;
-  row-gap: 5px;
-}
-
 .bottom {
   grid-column: span 2;
   display: flex;
   justify-content: flex-end;
+}
+
+.error {
+  margin-top: 10px;
 }

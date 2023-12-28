@@ -7,16 +7,22 @@ type Props = {
   multiline?: boolean;
 } & React.ComponentProps<'input'> & React.ComponentProps<'textarea'>;
 
-function Input(props: Props) {
-  if (props.multiline) {
+function Input({multiline, ...props}: Props, ref: any) {
+  if (multiline) {
     return (
-      <textarea {...props} className={cn(style.input, style.textarea)}></textarea>
+      <textarea
+        {...props}
+        ref={ref}
+        className={cn(style.input, style.textarea)}
+      ></textarea>
     )
   }
 
   return (
-    <input {...props} className={style.input} type="text" />
+    <input {...props} ref={ref} className={style.input} type="text" />
   );
 }
 
-export default Input;
+const MyInput = React.forwardRef(Input);
+
+export default MyInput;

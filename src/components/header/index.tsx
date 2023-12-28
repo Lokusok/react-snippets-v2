@@ -2,14 +2,21 @@ import style from './style.module.scss';
 
 import Container from '../container';
 import Search from '../search';
+import Logo from '../logo';
 
-function Header() {
+import { TGroupsQuery } from '../../api/groups/types';
+
+type Props = {
+  onSearchSubmit: (obj: TGroupsQuery) => void;
+};
+
+function Header(props: Props) {
   return (
     <header className={style.header}>
       <Container>
         <div className={style.row}>
-          <h1 className={style.logo}>Логотип тут</h1>
-          <Search className={style.search} />
+          <Logo />
+          <Search onSubmit={props.onSearchSubmit} className={style.search} />
         </div>
       </Container>
     </header>

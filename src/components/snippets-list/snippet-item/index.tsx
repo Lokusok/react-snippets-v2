@@ -1,9 +1,15 @@
+import { TSnippet } from '../../../models';
 import style from './style.module.scss';
 
-function SnippetItem() {
+type Props = {
+  snippet: TSnippet;
+  onClick: () => void;
+};
+
+function SnippetItem({ snippet, onClick }: Props) {
   return (
-    <button className={style.root}>
-      <span>Java-код для Backend-части</span>
+    <button onClick={onClick} className={style.root}>
+      <span>{snippet.title}</span>
     </button>
   );
 }

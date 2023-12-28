@@ -1,8 +1,12 @@
 import AddBtn from '../../add-btn';
 
-function AddSnippet() {
+type Props = {
+  onClick: () => void;
+};
+
+function AddSnippet({ onClick }: Props) {
   return (
-    <AddBtn />
+    <AddBtn onClick={onClick} />
   );
 }
 

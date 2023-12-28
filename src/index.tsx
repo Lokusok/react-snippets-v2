@@ -6,13 +6,17 @@ import './index.scss';
 import './vars.scss';
 
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 
 const rootDom = document.getElementById('root') as HTMLElement
 const root = ReactDOM.createRoot(rootDom);
 
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 );
 

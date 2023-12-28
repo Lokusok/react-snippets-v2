@@ -1,4 +1,4 @@
-.container {
+.form {
   display: flex;
 }
 
@@ -13,7 +13,7 @@
   min-width: 295px;
 
   &::placeholder {
-    color: #fff;
+    color: var(--color-grey);
   }
 
   &::selection {

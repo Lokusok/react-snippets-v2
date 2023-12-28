@@ -3,6 +3,8 @@
   padding: 10px 12px;
   border-radius: 6px;
   flex-grow: 1;
+  max-height: 276px;
+  overflow-y: auto;
 }
 
 .list {
