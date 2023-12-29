@@ -11,24 +11,14 @@
           "code": "fetch('...')"
         },
         {
-          "id": "2",
-          "title": "Вечный цикл",
-          "code": "while (true) {...}"
-        },
-        {
-          "id": "3",
-          "title": "Вечный цикл",
-          "code": "while (true) {...}"
-        },
-        {
-          "id": "4",
-          "title": "Вечный цикл",
-          "code": "while (true) {...}"
-        },
-        {
           "id": "5",
           "title": "Вечный цикл",
           "code": "while (true) {...}"
+        },
+        {
+          "id": "1703866465052",
+          "title": "Полиморфный компонент",
+          "code": "import {memo} from 'react';\nimport PropTypes from 'prop-types';\nimport {cn as bem} from '@bem-react/classname';\nimport numberFormat from '../../utils/number-format';\nimport './style.css';\n\nfunction BasketTool({sum, amount, onOpen, t}) {\n  const cn = bem('BasketTool');\n  return (\n    <div className={cn()}>\n      <span className={cn('label')}>{t('basket.inBasket')}</span>\n      <span className={cn('total')}>\n        {amount\n          ? `${amount} ${t('basket.articles', amount)} / ${numberFormat(sum)} ₽`\n          : t('basket.empty')\n        }\n      </span>\n      <button onClick={onOpen}>{t('basket.open')}</button>\n    </div>\n  );\n}\n\nBasketTool.propTypes = {\n  onOpen: PropTypes.func.isRequired,\n  sum: PropTypes.number,\n  amount: PropTypes.number,\n  t: PropTypes.func\n};\n\nBasketTool.defaultProps = {\n  onOpen: () => {\n  },\n  sum: 0,\n  amount: 0,\n  t: (text) => text\n}\n\nexport default memo(BasketTool);\n"
         }
       ]
     },
@@ -38,26 +28,17 @@
       "description": "Куски кода, связанные с авторизацией пользователей в системе",
       "snippets": [
         {
-          "id": "1",
-          "title": "Миграция БД",
-          "code": "migration of db"
-        },
-        {
-          "id": "2",
-          "title": "Обработка POST-запроса",
-          "code": "...@app.post..."
-        },
-        {
-          "id": "1703791958210",
-          "title": "dfgdfg",
-          "code": "print(\"hello world\")"
-        },
-        {
-          "id": "1703793227233",
-          "title": "fdgdfg",
-          "code": "print(\"hello world\")"
+          "id": "1703866481836",
+          "title": "FLASK. Post-запрос",
+          "code": "import {memo} from 'react';\nimport PropTypes from 'prop-types';\nimport {cn as bem} from '@bem-react/classname';\nimport numberFormat from '../../utils/number-format';\nimport './style.css';\n\nfunction BasketTool({sum, amount, onOpen, t}) {\n  const cn = bem('BasketTool');\n  return (\n    <div className={cn()}>\n      <span className={cn('label')}>{t('basket.inBasket')}</span>\n      <span className={cn('total')}>\n        {amount\n          ? `${amount} ${t('basket.articles', amount)} / ${numberFormat(sum)} ₽`\n          : t('basket.empty')\n        }\n      </span>\n      <button onClick={onOpen}>{t('basket.open')}</button>\n    </div>\n  );\n}\n\nBasketTool.propTypes = {\n  onOpen: PropTypes.func.isRequired,\n  sum: PropTypes.number,\n  amount: PropTypes.number,\n  t: PropTypes.func\n};\n\nBasketTool.defaultProps = {\n  onOpen: () => {\n  },\n  sum: 0,\n  amount: 0,\n  t: (text) => text\n}\n\nexport default memo(BasketTool);\n"
         }
       ]
+    },
+    {
+      "title": "Группа №3",
+      "description": "Краткое описание тут\n",
+      "snippets": [],
+      "id": "yNVbKL9"
     }
   ]
 }

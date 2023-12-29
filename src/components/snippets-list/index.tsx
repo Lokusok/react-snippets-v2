@@ -2,12 +2,13 @@ import style from './style.module.scss';
 
 import SnippetItem from './snippet-item';
 import AddSnippet from './add-snippet';
+
 import { TSnippet } from '../../models';
 
 type Props = {
   snippets: TSnippet[];
   onNewSnippet: () => void;
-  onSnippetClick: () => void;
+  onSnippetClick: (snippet: TSnippet) => void;
 };
 
 function SnippetsList(props: Props) {

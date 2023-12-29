@@ -1,5 +1,5 @@
 import SnippetForm from "../../components/snippet-form";
-import ModalLayout from "../../containers/modal-layout";
+import Modal from "../../containers/modal";
 
 import { useUpdateSnippetsMutation } from "../../api/groups";
 
@@ -13,15 +13,13 @@ function SnippetCreator() {
   const activeGroup = useAppSelector((state) => state.groups.active);
 
   const callbacks = {
-    submit: (data: { title: string }) => {
-      console.log(`Received data:`, data);
+    submit: (data: { title: string, code: string }) => {
       if (activeGroup) {
-        // TODO: FIX
         const newGroup = {
           ...activeGroup,
           snippets: [...activeGroup.snippets, {
-                id: String(Date.now()), title: data.title, code: 'print("hello world")',
-              }],
+                id: String(Date.now()), title: data.title, code: data.code,
+          }],
         };
         updateSnippets(newGroup);
         dispatch(setActiveModal(null));
@@ -30,9 +28,9 @@ function SnippetCreator() {
   };
 
   return (
-    <ModalLayout title="Создание нового сниппета">
+    <Modal title="Создание нового сниппета">
       <SnippetForm onSubmit={callbacks.submit} />
-    </ModalLayout>
+    </Modal>
   );
 }
 

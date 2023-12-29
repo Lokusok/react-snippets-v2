@@ -1,19 +1,17 @@
-import { AiOutlineDelete } from "react-icons/ai";
-
 import style from './style.module.scss';
 
 import cn from 'classnames';
 
 import Field from './field';
 import SnippetsList from '../snippets-list';
-import DeleteGroup from './delete-group';
+import DeleteBtn from '../delete-btn';
 
-import { TGroup } from '../../models';
+import { TGroup, TSnippet } from '../../models';
 
 type Props = {
   group: TGroup;
   onNewSnippet: (group: TGroup) => void;
-  onSnippetClick: () => void;
+  onSnippetClick: (group: TGroup, snippet: TSnippet) => void;
   onGroupDelete: (id: string) => void;
 };
 
@@ -24,6 +22,9 @@ function Group(props: Props) {
     },
     onNewSnippet: () => {
       props.onNewSnippet(props.group);
+    },
+    onSnippetClick: (snippet: TSnippet) => {
+      props.onSnippetClick(props.group, snippet);
     },
   };
 
@@ -44,11 +45,13 @@ function Group(props: Props) {
         <SnippetsList
           onNewSnippet={callbacks.onNewSnippet}
           snippets={props.group.snippets}
-          onSnippetClick={props.onSnippetClick}
+          onSnippetClick={callbacks.onSnippetClick}
         />
       </div>
 
-      <DeleteGroup onClick={callbacks.deleteGroup} />
+      <div className={style.delete}>
+        <DeleteBtn onClick={callbacks.deleteGroup} />
+      </div>
     </article>
   );
 }

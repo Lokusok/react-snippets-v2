@@ -17,7 +17,6 @@ function useOnClickOutside(ref: React.RefObject<HTMLElement>, ...handlers: any[]
     document.addEventListener('touchstart', listener);
 
     return () => {
-      console.log('here');
       document.removeEventListener('mousedown', listener);
       document.removeEventListener('touchstart', listener);
     };

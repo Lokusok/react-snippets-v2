@@ -1,4 +1,4 @@
-import ModalLayout from "../../containers/modal-layout";
+import Modal from "../../containers/modal";
 import GroupForm from "../../components/group-form";
 
 import { useAppDispatch } from "../../store";
@@ -19,9 +19,9 @@ function GroupCreator() {
   };
 
   return (
-    <ModalLayout title="Создание группы">
+    <Modal title="Создание группы">
       <GroupForm onSubmit={callbacks.submit} />
-    </ModalLayout>
+    </Modal>
   );
 }
 

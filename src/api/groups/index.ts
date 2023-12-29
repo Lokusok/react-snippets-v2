@@ -35,6 +35,14 @@ const groupsApi = createApi({
       }),
       invalidatesTags: ['Groups'],
     }),
+    deleteSnippet: builder.mutation<void, TGroup>({
+      query: (group) => ({
+        url: `groups/${group.id}`,
+        method: 'PUT',
+        body: group,
+      }),
+      invalidatesTags: ['Groups']
+    })
   }),
 });
 
@@ -42,6 +50,7 @@ export const {
   useLazyGetGroupsQuery,
   useAddGroupMutation,
   useDeleteGroupMutation,
-  useUpdateSnippetsMutation } = groupsApi;
+  useUpdateSnippetsMutation,
+  useDeleteSnippetMutation } = groupsApi;
 
 export default groupsApi;

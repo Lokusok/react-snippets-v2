@@ -8,7 +8,8 @@ import { setActiveGroup } from '../../store/slices/groups';
 
 import { useDeleteGroupMutation, useLazyGetGroupsQuery } from "../../api/groups";
 
-import { TGroup } from '../../models';
+import { TGroup, TSnippet } from '../../models';
+import { setActiveSnippet } from '../../store/slices/snippet';
 
 function Snippets() {
   const dispatch = useAppDispatch();
@@ -20,7 +21,11 @@ function Snippets() {
       dispatch(setActiveModal('snippet-create'));
       dispatch(setActiveGroup(group));
     },
-    onSnippetClick: () => dispatch(setActiveModal('snippet-view')),
+    onSnippetClick: (group: TGroup, snippet: TSnippet) => {
+      dispatch(setActiveModal('snippet-view'));
+      dispatch(setActiveGroup(group));
+      dispatch(setActiveSnippet(snippet));
+    },
     onGroupDelete: (id: string) => deleteGroup(id),
   };
 

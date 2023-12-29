@@ -3,13 +3,13 @@ import style from './style.module.scss';
 import Group from "../group";
 import AddGroup from '../group/add-group';
 
-import { TGroup } from '../../models';
+import { TGroup, TSnippet } from '../../models';
 
 type Props = {
   groups: TGroup[];
   onNewGroup: () => void;
   onNewSnippet: (group: TGroup) => void;
-  onSnippetClick: () => void;
+  onSnippetClick: (group: TGroup, snippet: TSnippet) => void;
   onGroupDelete: (id: string) => void;
 };
 
