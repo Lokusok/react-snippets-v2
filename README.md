@@ -7,4 +7,4 @@ snippet — отрывок, фрагмент — фрагмент исходно
 ### Данный проект является лишь пробой использования архитектуры, выученной на основе интенсива Y_Lab. Но с ней могут быть и расхождения.
 
 Превью проекта:
-https://github.com/Lokusok/react-snippets-v2/blob/master/src/assets/images/preview.jpg
+![Хранитель сниппетов](https://github.com/Lokusok/react-snippets-v2/blob/master/src/assets/images/preview.jpg)
